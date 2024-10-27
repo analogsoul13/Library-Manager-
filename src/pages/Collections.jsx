@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Add from '../components/Add'
 import { useDispatch, useSelector } from 'react-redux'
-import { showBooks } from '../redux/slices/booksDetailSlice'
+import { deleteBook, showBooks } from '../redux/slices/booksDetailSlice'
 
 function Collections() {
 
@@ -12,7 +12,7 @@ function Collections() {
     useEffect(() => {
         dispatch(showBooks())
         console.log("Data in books : ", books)
-    }, [])
+    }, [dispatch])
 
     if (loading) {
         return (<h2>Loading</h2>)
@@ -44,7 +44,7 @@ function Collections() {
                                     <h1>Price : $199</h1>
                                     <div className="flex justify-between card-actions mt-4">
                                         <button onClick={() => document.getElementById('my_modal_2').showModal()} className="btn btn-outline">Edit</button>
-                                        <button className="btn btn-error">Delete</button>
+                                        <button onClick={()=> dispatch(deleteBook(item.id))} className="btn btn-error">Delete</button>
                                     </div>
                                     {/* Modal for Editing */}
                                     <dialog id="my_modal_2" className="modal">

@@ -23,11 +23,23 @@ export const createBookData = createAsyncThunk("createBookData", async (data, {r
 
 //Read Action
 export const showBooks = createAsyncThunk("showUser", async(args,{rejectWithValue}) => {
-
     const response = await fetch("https://671e1cec1dfc429919815045.mockapi.io/crud");
-
     try {
         const result = await response.json();
+        console.log(result)
+        return result
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
+//DeleteAction
+export const deleteBook = createAsyncThunk("deleteBook", async(id,{rejectWithValue}) => {
+    const response = await fetch(`https://671e1cec1dfc429919815045.mockapi.io/crud/${id}` ,
+        {method : "DELETE"});
+    try {
+        const result = await response.json();
+        console.log(result)
         return result
     } catch (error) {
         return rejectWithValue(error)
@@ -65,6 +77,22 @@ export const bookDetail = createSlice({
         }),
         builder.addCase(showBooks.rejected,(state,action) => {
             state.loading = false;
+            state.books = action.payload
+        }),
+        builder.addCase(deleteBook.pending, (state) => {
+            state.loading = true;
+        }),
+        builder.addCase(deleteBook.fulfilled, (state,action) => {
+            state.loading = false;
+            console.log("Delete Action :", action.payload)
+        }),
+        builder.addCase(deleteBook.rejected,(state,action) => {
+            state.loading = false;
+            const {id} = action.payload
+            if(id){
+                state.books = state.books.filter((item)=> item.id !== id)
+            }
+
             state.books = action.payload
         })
     }
