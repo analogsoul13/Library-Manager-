@@ -17,7 +17,7 @@ function Collections() {
                         </div>
                     </div>
                 </dialog>
-                <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 bg-slate-200 p-6'>
+                <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 rounded-lg bg-slate-200 p-6'>
                     <div className="card card-side bg-base-100 shadow-xl">
                         <figure>
                             <img className='h-[300px] w-[250px]'
@@ -26,8 +26,10 @@ function Collections() {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">New Book is released!</h2>
-                            <p>Click the button to watch on Jetflix app.</p>
-                            <div className="card-actions justify-end">
+                            <h1>Name : Cosmos</h1>
+                            <h1>Author : Carl Sagan</h1>
+                            <h1>Price : $199</h1>
+                            <div className="flex justify-between card-actions mt-4 justify-end">
                                 <button className="btn btn-outline">Edit</button>
                                 <button className="btn btn-error">Delete</button>
                             </div>
