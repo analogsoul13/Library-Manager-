@@ -6,16 +6,19 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage:{
-        bgImg:"url('/bg-background.jpg')"
+      backgroundImage: {
+        bgImg: "url('/bg-background.jpg')"
       },
+      fontFamily: {
+        'custom': ['Noto Sans']
+      }
     },
   },
   plugins: [
     require('daisyui'),
   ],
-    daisyui: {
-      themes: ["light", "dark", "cupcake"],
-    },
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 }
 

@@ -21,7 +21,7 @@ function Collections() {
 
     return (
         <>
-            <div className='sm:p-6'>
+            <div className='sm:p-6 font-custom'>
                 {/* Modal for adding book */}
                 <div className=' hidden sm:flex'>
                   <Add />  

@@ -6,12 +6,12 @@ function Home() {
         <>
             <section>
                 {/* Hero Section */}
-                <div className='relative overflow-hidden mx-3 mt-4 sm:mt-0 rounded-lg'>
+                <div className='relative overflow-hidden mx-3 mt-4 font-custom sm:mt-0 rounded-lg'>
                     <video className='absolute w-full h-full object-cover' src="/assets/bg-video.mp4"
                         autoPlay loop muted playsInline></video>
                     <div className='relative rounded-lg mx-3'>
                         <div className='flex h-[600px] flex-col items-center justify-center col-span-1 sm:ml-16 mt-6 sm:mt-0 p-6'>
-                            <h1 className='text-5xl font-bold text-white shadow '>Manage Your Book Collection</h1>
+                            <h1 className='text-5xl font-bold font-custom text-white shadow '>Manage Your Book Collection</h1>
                             <Link to={'/collections'}>
                                 <button className='btn  w-44 mt-6 shadow-lg\'>See Collections</button>
                             </Link>
@@ -19,7 +19,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className='grid items-center mt-3 '>
+                <div className='grid items-center font-custom mt-3 '>
                     <div className='flex justify-center'>
                         <h1 className='text-3xl text-slate-700 p-3 font-bold'>What you can do</h1>
                     </div>
@@ -41,7 +41,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center mt-4 mx-3">
+                <div className="flex justify-center font-custom mt-4 mx-3">
                     <div className='grid grid-cols-1 items-center'>
                         <div className='flex justify-center'>
                             <h1 className='text-3xl text-slate-700 font-bold items-center'>Let me tell you about this</h1>
