@@ -16,7 +16,9 @@ function Collections() {
     }, [dispatch])
 
     if (loading) {
-        return (<h2>Loading</h2>)
+        return (<div className='flex justify-center space-x-3 font-custom'>
+            <h1 className='text-lg'>Loading...</h1>
+            <span className="loading loading-infinity loading-2xl"></span></div>)
     }
 
     return (

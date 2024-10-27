@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Home() {
+    const [loading, setLoading] = useState(true)
+    const handleLoadData = () => {
+        setLoading(false) //Hide Loading spinner once the video loaded
+    }
     return (
         <>
             <section>
                 {/* Hero Section */}
                 <div className='relative overflow-hidden mx-3 mt-4 font-custom sm:mt-0 rounded-lg'>
-                    <video className='absolute w-full h-full object-cover' src="/assets/bg-video.mp4"
+                    {loading && (
+                        <div className="fixed p-6 inset-0 space-x-3 mb-6 flex items-center justify-center z-50">
+                            <h1 className='text-xl'>Grab a cup of coffee..</h1>
+                            <span className="loading loading-infinity loading-lg"></span>
+                        </div>
+                    )}
+                    <video onLoadedData={handleLoadData} className={`absolute w-full h-full object-cover ${loading ? 'hidden' : 'block'}`} src="/assets/bg-video.mp4"
                         autoPlay loop muted playsInline></video>
                     <div className='relative rounded-lg mx-3'>
                         <div className='flex h-[600px] flex-col items-center justify-center col-span-1 sm:ml-16 mt-6 sm:mt-0 p-6'>
