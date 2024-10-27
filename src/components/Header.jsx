@@ -11,7 +11,7 @@ function Header() {
             {/* Navbar */}
             <div className="navbar p-2">
                 <div className="flex-1">
-                    <Link to={'/'}><button className="btn btn-ghost font-custom text-gray-900 text-2xl">Redux CRUD Library</button></Link>
+                    <Link to={'/'}><button className="btn btn-ghost font-custom text-gray-900 text-lg md:text-2xl">Redux CRUD Library</button></Link>
                 </div>
                 <div className="p-2 font-custom">
                     Books
