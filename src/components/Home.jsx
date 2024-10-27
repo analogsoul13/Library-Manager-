@@ -6,7 +6,7 @@ function Home() {
         <>
             <section>
                 {/* Hero Section */}
-                <div className='relative overflow-hidden mx-3 rounded-lg'>
+                <div className='relative overflow-hidden mx-3 mt-4 sm:mt-0 rounded-lg'>
                     <video className='absolute w-full h-full object-cover' src="/assets/bg-video.mp4"
                         autoPlay loop muted playsInline></video>
                     <div className='relative rounded-lg mx-3'>

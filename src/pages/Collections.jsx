@@ -21,18 +21,21 @@ function Collections() {
 
     return (
         <>
-            <div className='p-6'>
+            <div className='sm:p-6'>
                 {/* Modal for adding book */}
-                <Add />
+                <div className=' hidden sm:flex'>
+                  <Add />  
+                </div>
+                
                 {/* Books display card */}
                 {books.length == 0 ? (
                     <div className='flex justify-center p-6'>
                         <p>No books found !!</p>
                     </div>
                 ) : (
-                    <div className='grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mt-4 rounded-lg bg-slate-200 p-6'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 mt-4 rounded-lg bg-slate-200 sm:p-6'>
                         {books.map((item) => (
-                            <div className="card card-side w-auto bg-base-100 shadow-xl">
+                            <div className="card card-side w-auto bg-base-100 mx-2 my-2 shadow-xl">
                                 <figure>
                                     <img className='h-[300px] w-[250px]'
                                         src={item.bimage}

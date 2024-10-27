@@ -30,7 +30,7 @@ function Add() {
     return (
         <>
             {/* Modal for adding new book */}
-            <button onClick={() => document.getElementById('my_modal_1').showModal()} className='btn btn-accent text-slate-700 shadow-lg'>Add New Book</button>
+            <button onClick={() => document.getElementById('my_modal_1').showModal()} className='btn hidden sm:flex btn-accent text-slate-700 shadow-lg'>Add New Book</button>
             <dialog id="my_modal_1" className="modal">
 
                 <div className="modal-box space-y-2">
