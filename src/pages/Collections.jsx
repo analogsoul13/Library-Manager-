@@ -35,7 +35,7 @@ function Collections() {
                                 <figure>
                                     <img className='h-[300px] w-[250px]'
                                         src={item.bimage}
-                                        alt="Movie" />
+                                        alt="Book Cover" />
                                 </figure>
                                 <div className="card-body">
                                     <div className="badge badge-accent">NEW</div>
