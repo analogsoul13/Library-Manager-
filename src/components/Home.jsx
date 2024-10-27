@@ -44,7 +44,7 @@ function Home() {
                 <div className="flex justify-center mt-4 mx-3">
                     <div className='grid grid-cols-1 items-center'>
                         <div className='flex justify-center'>
-                            <h1 className='text-3xl text-slate-700 font-bold items-center'>Let me tell about this</h1>
+                            <h1 className='text-3xl text-slate-700 font-bold items-center'>Let me tell you about this</h1>
                         </div>
 
                         <p className='mt-4 mb-4'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, ut ducimus. Voluptates dolore blanditiis minima, suscipit, corrupti assumenda nihil earum vel eum qui libero ducimus sunt! Culpa atque incidunt iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem placeat accusantium mollitia facere! Mollitia quidem in fuga dicta, perferendis iste dolorem error optio eum quam voluptas itaque aut quos. Officia maxime, blanditiis harum modi optio dignissimos accusantium possimus ipsa nostrum qui. Perferendis ut minima vero mollitia molestiae quis neque distinctio!</p>
