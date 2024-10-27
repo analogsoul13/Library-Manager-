@@ -46,6 +46,26 @@ export const deleteBook = createAsyncThunk("deleteBook", async(id,{rejectWithVal
     }
 });
 
+//Update Action
+export const updateBook = createAsyncThunk("updateBook", async (data, {rejectWithValue}) => {
+    console.log("update data :", data)
+    const response = await fetch(`https://671e1cec1dfc429919815045.mockapi.io/crud/${data.id}`, {
+        method : "PUT",
+        headers : {
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify(data),
+    })
+
+    try {
+        const result = await response.json()
+        return result;
+
+    } catch (error) {
+        return rejectWithValue(error);
+    }
+})
+
 export const bookDetail = createSlice({
     name: "bookDetail",
     initialState: {
@@ -57,6 +77,8 @@ export const bookDetail = createSlice({
 
     },
     extraReducers : (builder) => {
+
+        // CREATE Data
         builder.addCase(createBookData.pending, (state) => {
             state.loading = true;
         }),
@@ -68,6 +90,8 @@ export const bookDetail = createSlice({
             state.loading = false;
             state.books = action.payload
         }),
+
+        // READ Data
         builder.addCase(showBooks.pending, (state) => {
             state.loading = true;
         }),
@@ -79,6 +103,8 @@ export const bookDetail = createSlice({
             state.loading = false;
             state.books = action.payload
         }),
+
+        // DELETE Data
         builder.addCase(deleteBook.pending, (state) => {
             state.loading = true;
         }),
@@ -93,6 +119,21 @@ export const bookDetail = createSlice({
                 state.books = state.books.filter((item)=> item.id !== id)
             }
 
+            state.books = action.payload
+        }),
+
+        // UPDATE Data
+        builder.addCase(updateBook.pending, (state) => {
+            state.loading = true;
+        }),
+        builder.addCase(updateBook.fulfilled, (state,action) => {
+            state.loading = false;
+            state.books = state.books.map((item) =>(
+                item.id === action.payload.id ? action.payload : item
+            ))
+        }),
+        builder.addCase(updateBook.rejected,(state,action) => {
+            state.loading = false;
             state.books = action.payload
         })
     }

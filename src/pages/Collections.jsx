@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Add from '../components/Add'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteBook, showBooks } from '../redux/slices/booksDetailSlice'
+import { Link } from 'react-router-dom'
 
 function Collections() {
 
@@ -43,7 +44,10 @@ function Collections() {
                                     <h1>Author : {item.author}</h1>
                                     <h1>Price : $199</h1>
                                     <div className="flex justify-between card-actions mt-4">
+                                        <Link to={`/edit/${item.id}`} >
                                         <button onClick={() => document.getElementById('my_modal_2').showModal()} className="btn btn-outline">Edit</button>
+                                        </Link>
+                                        
                                         <button onClick={()=> dispatch(deleteBook(item.id))} className="btn btn-error">Delete</button>
                                     </div>
                                     {/* Modal for Editing */}
