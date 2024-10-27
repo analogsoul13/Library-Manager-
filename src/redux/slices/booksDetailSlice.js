@@ -21,6 +21,19 @@ export const createBookData = createAsyncThunk("createBookData", async (data, {r
     }
 })
 
+//Read Action
+export const showBooks = createAsyncThunk("showUser", async(args,{rejectWithValue}) => {
+
+    const response = await fetch("https://671e1cec1dfc429919815045.mockapi.io/crud");
+
+    try {
+        const result = await response.json();
+        return result
+    } catch (error) {
+        return rejectWithValue(error)
+    }
+});
+
 export const bookDetail = createSlice({
     name: "bookDetail",
     initialState: {
@@ -40,6 +53,17 @@ export const bookDetail = createSlice({
             state.books.push(action.payload)
         }),
         builder.addCase(createBookData.rejected,(state,action) => {
+            state.loading = false;
+            state.books = action.payload
+        }),
+        builder.addCase(showBooks.pending, (state) => {
+            state.loading = true;
+        }),
+        builder.addCase(showBooks.fulfilled, (state,action) => {
+            state.loading = false;
+            state.books = action.payload
+        }),
+        builder.addCase(showBooks.rejected,(state,action) => {
             state.loading = false;
             state.books = action.payload
         })
