@@ -25,7 +25,7 @@ function Home() {
                     </div>
 
                     <div className="grid sm:grid-cols-3 gap-6 pt-6 mx-3">
-                        <div className='flex flex-col items-center justify-center bg-accent rounded-md min-h-[250px] shadow-lg'>
+                        <div className='flex flex-col items-center justify-center bg-secondary-content rounded-md min-h-[250px] shadow-lg'>
                             <img className='w-40 h-40' src="https://images.vexels.com/media/users/3/136492/isolated/preview/9405e34df4de152cba0e31c040f5675e-open-book-round-icon-by-vexels.png" alt="" />
                             <h1 className='text-xl'>Add your favorite books</h1>
                         </div>
